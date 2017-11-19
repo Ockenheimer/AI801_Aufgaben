@@ -11,38 +11,44 @@ package ai801_aufgaben;
  */
 public class Aufgabe4 {
 
-    public static long summe(int grenze) {
+    public static int summe(int grenze) {
 
-        
-        long summe = 0;
+        int summe = 0;
 
         for (int nr1 = 1; nr1 < grenze; nr1++) {
             int sumteiler1 = 0;
-            int sumteiler2 = 0;
-            int nr2 = 0;
+            int merker = nr1;
             System.out.println("Startzahl: " + nr1);
-            for (int i = 1; i <= nr1; i++) {
+            for (int i = 1; i < nr1; i++) {
                 if ((nr1 % i) == 0) {
+                    System.out.println("Sumteiler1 " + sumteiler1 + " erhöht um " + i);
                     sumteiler1 += i;
-                    System.out.println("1: " + i);
+                   
                 }
-                if (sumteiler1 != nr1) {
-                    nr2 = sumteiler1;
-                    for (int j = 1; j <= nr2; j++) {
-                        if ((nr2 % j) == 0) {
-                            sumteiler2 += j;
-                          //  System.out.println("2: " + j);
-                        }
+            }
+            int sumteiler2 = 0;
+            if (sumteiler1 != nr1) {
+                System.out.println(sumteiler1 + " ist ungleich " + nr1);
 
-                        if (sumteiler2 == nr1) {
-                            summe += nr1;
-                            System.out.println("Summe der Teiler: " + sumteiler2);
-                        }
+                for (int j = 1; j < sumteiler1; j++) {
+
+                    if ((sumteiler1 % j) == 0) {
+                        sumteiler2 += j;
+                        
                     }
                 }
+            }
+            
+            System.out.println("Ich teste nun " + sumteiler2 + " und " + merker);
+
+            if (sumteiler2 == merker) {
+                summe += nr1;
+                System.out.println("Ich habe bei " + nr1 + " die Summe auf " + summe + " erhöht."
+                );
+                System.out.println("Summe der Teiler: " + summe);
 
             }
-
+            
         }
         return summe;
     }
