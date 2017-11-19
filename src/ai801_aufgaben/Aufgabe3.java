@@ -13,20 +13,21 @@ public class Aufgabe3 {
 
     public static long summe(int grenze) {
         int an1 = 1;
-        int an2 = 1;
-        int an;
+        int an = 2;
+        int merk;
+        //int an;
 
         long summe = 0;
-        do {
+        while (an <= grenze){
 
-            an = an1 + an2;
             if (an % 2 == 0) {
                 summe += an;
             }
-            an2 = an1;
-            an1 = an;
+            merk=an;
+            an += an1;
+            an1 = merk;
 
-        } while (an < grenze);
+        }
 
         return summe;
 
