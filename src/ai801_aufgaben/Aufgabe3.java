@@ -2,7 +2,14 @@ package ai801_aufgaben;
 
 public class Aufgabe3 {
 
-    public static long summe(int grenze) {
+    public Aufgabe3() {
+    }
+
+    public long getSumme(int max){
+        return summe(max);
+    }
+    
+    private long summe(int grenze) {
         int an1 = 1;
         int an = 2;
         int merk;

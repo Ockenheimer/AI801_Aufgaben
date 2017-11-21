@@ -2,7 +2,13 @@ package ai801_aufgaben;
 
 public class Aufgabe4 {
 
-    public static int summe(int grenze) {
+    public Aufgabe4() {
+    }
+
+    public int getSumme(int max){
+        return this.summe(max);
+    }
+    private int summe(int grenze) {
 
         int summe = 0;
         long schritte = 0;
@@ -11,13 +17,13 @@ public class Aufgabe4 {
             int sumteiler1 = 0;
             int merker = nr1;
 
-            if ((nr1 % 1000) == 0) {
+         /*  if ((nr1 % 1000) == 0) {
                 System.out.print(".");
             }
             if ((nr1 % 10000) == 0) {
                 System.out.println(nr1);
             }
-
+*/
             for (int i = 1; i <= nr1 / 2; i++) {
                 if ((nr1 % i) == 0) {
                     sumteiler1 += i;
