@@ -21,7 +21,6 @@ public class Aufgabe4 {
             for (int i = 1; i <= nr1 / 2; i++) {
                 if ((nr1 % i) == 0) {
                     sumteiler1 += i;
-
                 }
                 schritte++;
             }
@@ -32,7 +31,6 @@ public class Aufgabe4 {
 
                     if ((sumteiler1 % j) == 0) {
                         sumteiler2 += j;
-
                     }
                     schritte++;
 
