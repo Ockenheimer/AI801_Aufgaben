@@ -43,7 +43,7 @@ public class Aufgabe4 {
                 }
             }
 
-            if (sumteiler2 == merker) {
+            if (sumteiler2 == merker&&sumteiler2<grenze) {
                 summe += nr1;
             }
 

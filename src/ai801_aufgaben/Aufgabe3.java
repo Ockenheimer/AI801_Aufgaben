@@ -5,11 +5,11 @@ public class Aufgabe3 {
     public Aufgabe3() {
     }
 
-    public long getSumme(int max){
+    public long getSumme(long max){
         return summe(max);
     }
     
-    private long summe(int grenze) {
+    private long summe(long grenze) {
         int an1 = 1;
         int an = 2;
         int merk;
