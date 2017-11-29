@@ -10,9 +10,9 @@ public class Aufgabe3 {
     }
     
     private long summe(long grenze) {
-        int an1 = 1;
-        int an = 2;
-        int merk;
+        long an1 = 1;
+        long an = 2;
+        long merk;
 
         long summe = 0;
         while (an <= grenze) {
