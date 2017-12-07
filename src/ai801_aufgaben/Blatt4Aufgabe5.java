@@ -1,25 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ai801_aufgaben;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 
 import java.util.Hashtable;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 import java.util.Map;
 
-/**
- *
- * @author Markus
- */
+
 public class Blatt4Aufgabe5 {
 
     public Hashtable<String, Integer> ht = new Hashtable<>();
@@ -30,7 +21,7 @@ public class Blatt4Aufgabe5 {
 
         try {
 
-            String[] buch = b4a1.einlesen("C:\\Users\\Markus\\OneDrive\\OneDrive - et.hs-fulda.de\\AI801 - Datenstrukturen und Algorithmen\\AI801_Aufgaben\\geheim.txt");
+            String[] buch = b4a1.einlesen("src//AI801_Aufgaben//geheim.txt");
             for (int i = 0; i < buch.length; i++) {
 
                 if (ht.containsKey(buch[i])) {
@@ -40,7 +31,7 @@ public class Blatt4Aufgabe5 {
                     ht.put(buch[i], 1);
                 }
             }
-            System.out.println(ht.containsKey("﻿Johann"));
+            System.out.println(ht.containsKey("Johann"));
             System.out.println(buch[0].length());
         } catch (FileNotFoundException ex) {
             System.out.println("Datei nicht da.");
@@ -51,12 +42,26 @@ public class Blatt4Aufgabe5 {
 
     public void listsort() {
 
+       //hier soll die Liste sortiert werden.
+
        List<Map.Entry<String, Integer>> liste = new ArrayList<>(ht.entrySet());
-       /*keine Ahnung wie das sortieren läuft.
-       *Irgendwie muss der rechte vom linken Wert getrennt werden und der rechte als Sortierung angesprochen werden.
-*/
-       //liste.sort();
-        System.out.println(liste.get(0));
+
+       //Implementierung einer neuen Sortierfunktion
+       Collections.sort(liste, new Comparator<Map.Entry<String, Integer>>() {
+           @Override
+           public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+           if (o1.getValue()<o2.getValue()){
+           return 1;
+           }    
+           if (o1.getValue()>o2.getValue()){
+               return -1;
+           }
+           return 0;
+           
+           }
+       });
+       
+       System.out.println(liste.get(0));
         
         }
     }
