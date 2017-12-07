@@ -21,12 +21,12 @@ public class AI801_Aufgaben {
 //        b4a1.suchen("Lotte");
 //        b4a1.suchen("ich");
 //        b4a1.suchen("Computer");
-//          Blatt4Aufgabe3 b4a3 = new Blatt4Aufgabe3();
-//          b4a3.alphabet();
-//          b4a3.suche("schaefer");
-    Blatt4Aufgabe5 b4a5 = new Blatt4Aufgabe5();
-        b4a5.hashtableErstellen();
-        b4a5.listsort();
+          Blatt4Aufgabe3 b4a3 = new Blatt4Aufgabe3();
+          b4a3.alphabet();
+          b4a3.suche("schaefer");
+//    Blatt4Aufgabe5 b4a5 = new Blatt4Aufgabe5();
+//        b4a5.hashtableErstellen();
+//        b4a5.listsort();
     }
 
 }
