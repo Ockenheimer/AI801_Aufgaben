@@ -6,10 +6,15 @@
 package ai801_aufgaben;
 
 import java.io.FileNotFoundException;
-import java.util.Enumeration;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+
 import java.util.Hashtable;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Map;
 
 /**
  *
@@ -17,8 +22,10 @@ import java.util.logging.Logger;
  */
 public class Blatt4Aufgabe5 {
 
+    public Hashtable<String, Integer> ht = new Hashtable<>();
+
     public void hashtableErstellen() {
-        Hashtable<String, Integer> ht = new Hashtable<>();
+
         Blatt4Aufgabe1 b4a1 = new Blatt4Aufgabe1();
 
         try {
@@ -39,5 +46,17 @@ public class Blatt4Aufgabe5 {
             System.out.println("Datei nicht da.");
         }
 
+
     }
-}
+
+    public void listsort() {
+
+       List<Map.Entry<String, Integer>> liste = new ArrayList<>(ht.entrySet());
+       /*keine Ahnung wie das sortieren läuft.
+       *Irgendwie muss der rechte vom linken Wert getrennt werden und der rechte als Sortierung angesprochen werden.
+*/
+       //liste.sort();
+        System.out.println(liste.get(0));
+        
+        }
+    }
