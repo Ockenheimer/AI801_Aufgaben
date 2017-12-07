@@ -26,26 +26,27 @@ public class Blatt4Aufgabe3 {
         return alphabetArray;
     }
 
-    public int sucheBinaer(char[] charArray, char beginn, char ende, char suche, int counter) {
+    public int sucheBinaer(char[] charArray, int beginn, int ende, char suche, int counter) {
 
-        char mitte;
+        int mitte;
         if ((beginn + ende) % 2 != 0) {
-            mitte = (char) ((beginn + ende + 1) / 2);
+            mitte = ((beginn + ende + 1) / 2);
         } else {
-            mitte = (char) ((beginn + ende) / 2);
+            mitte = ((beginn + ende) / 2);
         }
 
         if (suche > charArray[mitte]) {
             counter += 1;
-            return sucheBinaer(charArray, mitte, ende, suche, counter);
+            return sucheBinaer(charArray, mitte+1, ende, suche, counter);
 
         }
         if (suche < charArray[mitte]) {
             counter += 1;
-            return sucheBinaer(charArray, beginn, mitte, suche, counter);
+            return sucheBinaer(charArray, beginn, mitte-1, suche, counter);
 
         }
          
+        System.out.println("Der Buchstabe " + suche +" befindet sich an Position "+ mitte);
             return counter;
         }
 
@@ -54,11 +55,12 @@ public class Blatt4Aufgabe3 {
     public void suche(String name) {
         char[] nameArray = name.toUpperCase().toCharArray();
         char[] alphabetArray2 = alphabet();
-        int counter = 0;
+        
         for (int i = 0; i < nameArray.length; i++) {
-            counter = sucheBinaer(alphabetArray2, alphabetArray2[0], alphabetArray2[alphabetArray2.length - 1], nameArray[i], counter);
+            int counter = 0;
+            counter = sucheBinaer(alphabetArray2, 0, alphabetArray2.length - 1, nameArray[i], counter);
 
-            System.out.println("Der Buchstabe " + nameArray[i] + " brauchte " + counter + " Durchläufe um gefunden zu werden.");
+            System.out.println("Die Suche brauchte " + counter + " Durchläufe um gefunden zu werden.");
 
         }
 
