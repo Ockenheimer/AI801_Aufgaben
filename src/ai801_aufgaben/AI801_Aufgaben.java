@@ -1,9 +1,5 @@
 package ai801_aufgaben;
 
-import com.sun.xml.internal.ws.handler.MessageHandlerContextImpl;
-import java.io.FileNotFoundException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class AI801_Aufgaben {
 
@@ -24,9 +20,17 @@ public class AI801_Aufgaben {
 //          Blatt4Aufgabe3 b4a3 = new Blatt4Aufgabe3();
 //          b4a3.alphabet();
 //          b4a3.suche("schaefer");
-    Blatt4Aufgabe5 b4a5 = new Blatt4Aufgabe5();
-        b4a5.hashtableErstellen();
-        b4a5.listsort();
+//    Blatt4Aufgabe5 b4a5 = new Blatt4Aufgabe5();
+//        b4a5.hashtableErstellen();
+//        b4a5.listsort();
+
+        Blatt5 b5a1 = new Blatt5(10);
+        b5a1.befuelleFeld(b5a1.feld);
+
+        //   System.out.println("Es waren "+b5a1.bubbleSort(b5a1.feld)+" Vertauschungen für eine Feldgröße von "+b5a1.feld.length +" nötig.");
+        b5a1.quickSort(b5a1.feld, 0, b5a1.feld.length);
+        System.out.println("Es waren " + b5a1.zaehler + " Vertauschungen für eine Feldgröße von " + b5a1.feld.length + " nötig.");
+
     }
 
 }
