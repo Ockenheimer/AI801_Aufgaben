@@ -29,13 +29,13 @@ public class Blatt6 {
 
         public Node(char Value) {
             this.Value = Value;
-          
 
         }
 
         @Override
         public String toString() {
-            return "Value: " + Value + ", links: " + links + ", rechts: " + rechts +";;";
+          
+           return Value + " -> " + links.Value + "\n"+ Value + " -> " + rechts.Value ;
         }
 
     }
@@ -46,16 +46,19 @@ public class Blatt6 {
 
             knoten = suchen(buchstabe, root);
 
-            if (buchstabe <= knoten.Value) {
-                Node linkstemp = new Node(buchstabe);
-                knoten.links = linkstemp;
-               
-            } else {
-                Node rechtstemp = new Node(buchstabe);
-                knoten.rechts = rechtstemp;
+            if (buchstabe != knoten.Value) {
+                if (buchstabe <= knoten.Value) {
+                    Node linkstemp = new Node(buchstabe);
+                    knoten.links = linkstemp;
+
+                } else {
+                    Node rechtstemp = new Node(buchstabe);
+                    knoten.rechts = rechtstemp;
+                }
             }
         } else {
             root = new Node(buchstabe);
+
         }
     }
 
@@ -64,12 +67,19 @@ public class Blatt6 {
             if (buchstabe < knoten.Value) {
                 if (knoten.links != null) {
                     knoten = suchen(buchstabe, knoten.links);
-                } else {return knoten;}
-            } else {
+                } else {
+                    return knoten;
+                }
+            }
+            if (buchstabe > knoten.Value) {
                 if (knoten.rechts != null) {
 
                     knoten = suchen(buchstabe, knoten.rechts);
-                }else{ return knoten;}
+
+                }
+                if (buchstabe == knoten.Value) {
+                    return knoten;
+                }
             }
         }
         return knoten;
