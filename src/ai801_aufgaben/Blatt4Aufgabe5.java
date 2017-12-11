@@ -31,14 +31,15 @@ public class Blatt4Aufgabe5 {
                     ht.put(buch[i], 1);
                 }
             }
-            System.out.println(ht.containsKey("Johann"));
-            System.out.println(buch[0].length());
+           
         } catch (FileNotFoundException ex) {
             System.out.println("Datei nicht da.");
         }
 
 
     }
+
+  
 
     public void listsort() {
 
@@ -60,8 +61,10 @@ public class Blatt4Aufgabe5 {
            
            }
        });
+        for (int i = 0; i < liste.size(); i++) {
+       System.out.println(liste.get(i));     
+        }
        
-       System.out.println(liste.get(0));
         
         }
     }
