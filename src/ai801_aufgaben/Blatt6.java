@@ -5,10 +5,6 @@
  */
 package ai801_aufgaben;
 
-import com.sun.org.apache.xml.internal.security.keys.content.KeyInfoContent;
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author markusschaefer
@@ -27,16 +23,28 @@ public class Blatt6 {
 
         char Value;
 
+        
         public Node(char Value) {
             this.Value = Value;
-
-        }
+            }
 
         @Override
         public String toString() {
-          
-           return Value + " -> " + links.Value + "\n"+ Value + " -> " + rechts.Value ;
+            StringBuilder sb = new StringBuilder();
+            if (this.links!=null) {
+                sb.append(Value + " -> " + links.Value +"\n" );
+                sb.append(links.toString());
+            }
+            if (this.rechts!= null) {
+                sb.append(Value + " -> " + rechts.Value+"\n");
+                sb.append( rechts.toString());
+
+            }
+
+            return sb.toString();
         }
+
+       
 
     }
 
@@ -55,7 +63,7 @@ public class Blatt6 {
                     Node rechtstemp = new Node(buchstabe);
                     knoten.rechts = rechtstemp;
                 }
-            }
+          }
         } else {
             root = new Node(buchstabe);
 
@@ -63,10 +71,11 @@ public class Blatt6 {
     }
 
     public Node suchen(char buchstabe, Node knoten) {
-        if (knoten != null) {
+       
+        if (buchstabe != knoten.Value){
             if (buchstabe < knoten.Value) {
                 if (knoten.links != null) {
-                    knoten = suchen(buchstabe, knoten.links);
+                    knoten =  suchen(buchstabe, knoten.links);
                 } else {
                     return knoten;
                 }
