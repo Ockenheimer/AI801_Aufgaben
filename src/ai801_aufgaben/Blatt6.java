@@ -11,7 +11,7 @@ package ai801_aufgaben;
  * @param <Character>
  */
 public class Blatt6 {
-
+//Aufgabe 1
     public Blatt6() {
     }
     Node root;
@@ -93,5 +93,17 @@ public class Blatt6 {
         }
         return knoten;
     }
+//Aufgabe 2
+   public void inOrder(Node knoten) {
 
+	 
+	        if (knoten != null) {
+
+	 
+
+	            inOrder(knoten.links);
+	            System.out.println(knoten);
+	            inOrder(knoten.rechts);
+	        } 
+   }
 }
