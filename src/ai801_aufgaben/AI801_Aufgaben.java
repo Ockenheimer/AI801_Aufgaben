@@ -5,7 +5,7 @@ public class AI801_Aufgaben {
 
 
 
-    !!!FEHLER!!!
+   // !!!FEHLER!!! <-- hier war der Fehler. Hab ihn mal auskommentiert. Nun tut er wieder!
     
 
     public static void main(String[] args) {
