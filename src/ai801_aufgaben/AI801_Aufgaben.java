@@ -3,7 +3,11 @@ package ai801_aufgaben;
 
 public class AI801_Aufgaben {
 
+
+
+    !!!FEHLER!!!
     
+
     public static void main(String[] args) {
 
     Blatt6 b6 = new Blatt6();
