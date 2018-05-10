@@ -5,6 +5,13 @@ public class Aufgabe4 {
     public Aufgabe4() {
     }
 
+
+
+!!!Vollkommen Irrsinnger Fehler!!!!!!
+
+
+
+
     public int getSumme(int max){
         return this.summe(max);
     }
