@@ -7,7 +7,7 @@ public class Aufgabe4 {
 
 
 
-!!!Vollkommen Irrsinnger Fehler!!!!!!
+// !!!Vollkommen Irrsinnger Fehler!!!!!! <-- da ist der Fehler
 
 
 
